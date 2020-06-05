@@ -4,6 +4,14 @@ class UserEventsController < ApplicationController
         render json: user_events
     end
 
+    # def  create
+    
+    # end
+
+    # def destroy 
+
+    # end
+
     
 
 end
