@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :sessions
   resources :user_events
-  resources :events
+  resources :events, constraints:{id: /[0-9]+/}
   resources :users
   get "/users/:id/events", to: "users#my_events"
   get "/users/:id/events_attending", to: "users#events_attending"
+  get "/events/music", to: "events#music"
+
 
 
 

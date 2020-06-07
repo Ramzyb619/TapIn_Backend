@@ -8,6 +8,11 @@ class EventsController < ApplicationController
         render json: event   
     end
 
+    def music 
+        events = Event.where(category: "MUSIC")
+        render json: events
+    end
+
     # def  create
     
     # end
