@@ -9,7 +9,18 @@ class EventsController < ApplicationController
     end
 
     def music 
-        events = Event.where(category: "MUSIC")
+        events = Event.where(category: "Music")
+        render json: events
+    end
+
+    def charity_events 
+        events = Event.where(category: "Charity and Causes")
+        render json: events
+    end
+
+    def search 
+        query = params[:query]
+        events = Event.where("category LIKE :query", query: query)
         render json: events
     end
 
