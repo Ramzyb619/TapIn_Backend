@@ -18,6 +18,16 @@ class EventsController < ApplicationController
         render json: events
     end
 
+    def this_weekend 
+        events = Event.where(category: "This Weekend")
+        render json: events
+    end
+
+    def food
+        events = Event.where(category: "Food and Drink")
+        render json: events
+    end
+
     def search 
         query = params[:query]
         events = Event.where("category LIKE :query", query: query)
