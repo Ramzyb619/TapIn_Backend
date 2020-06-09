@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get "/users/:id/events_attending", to: "users#events_attending"
   get "/events/music", to: "events#music"
   get "/events/charity-events", to: "events#charity_events"
+  get "/events/this-weekend", to: "events#this_weekend"
+  get "/events/food", to: "events#food"
+
+
   get "/events/search", to: "events#search"
 
 
