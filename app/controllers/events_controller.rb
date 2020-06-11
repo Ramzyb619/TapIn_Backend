@@ -3,9 +3,18 @@ class EventsController < ApplicationController
         events = Event.all
         render json: events
     end
+
     def show
         event = Event.find(params[:id])
-        render json: event   
+            if event.user_id.nil?
+                render json: event
+            else
+                user = User.find(event.user_id)
+                user_name = user.name
+                event_json = event.as_json  # => event_json = {id: 3, ...}
+                event_json["user_name"] = user_name
+                render json: event_json # => event_json = { id: 3, ..., user_name: "Ali" }
+            end
     end
 
     def music 
@@ -34,12 +43,25 @@ class EventsController < ApplicationController
         render json: events
     end
 
-    # def  create
-    
-    # end
+    def  create
+    events = Event.create(event_params) 
+    user = User.find(events.user_id)
+    user_name = user.name
+    resp = events.as_json
+    resp["user_name"] = user_name
+    render json: resp
+    end
 
-    # def destroy 
-        
-    # end
+    def destroy
+        event = Event.find(params[:id])
+        event.destroy
+        render json: event
+    end
+
+    private 
+
+def event_params
+    params.require(:event).permit(:title, :category, :location, :img_url, :description, :user_id, :date_time)
+ end
 
 end
