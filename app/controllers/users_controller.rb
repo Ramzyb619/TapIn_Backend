@@ -28,8 +28,8 @@ class UsersController < ApplicationController
         else
            render :json => 'user'
         end
-     
     end
+    
     def user_params
         params.require(:user).permit(:name, :password, :bio, :age, :phone_number, :email, :img_url)
      end
