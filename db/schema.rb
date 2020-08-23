@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_233811) do
     t.string "bio"
     t.integer "age"
     t.string "img_url"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

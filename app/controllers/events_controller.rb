@@ -6,12 +6,17 @@ class EventsController < ApplicationController
 
     def show
         event = Event.find(params[:id])
+            datetime = event.date_time
+            formatted_datetime = datetime.strftime("%m/%d/%Y %I:%M%p")
+            event_json = event.as_json
+            event_json["formatted_datetime"] = formatted_datetime
+
+
             if event.user_id.nil?
-                render json: event
+                render json: event_json
             else
                 user = User.find(event.user_id)
                 user_name = user.name
-                event_json = event.as_json  # => event_json = {id: 3, ...}
                 event_json["user_name"] = user_name
                 render json: event_json # => event_json = { id: 3, ..., user_name: "Ali" }
             end
@@ -44,6 +49,7 @@ class EventsController < ApplicationController
     end
 
     def  create
+        # byebug
     events = Event.create(event_params) 
     user = User.find(events.user_id)
     user_name = user.name
