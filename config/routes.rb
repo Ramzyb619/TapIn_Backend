@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   get "/events/charity-events", to: "events#charity_events"
   get "/events/this-weekend", to: "events#this_weekend"
   get "/events/food", to: "events#food"
-
-
   get "/events/search", to: "events#search"
+  delete "/user_events", to: "user_events#destroy"
 
 
 

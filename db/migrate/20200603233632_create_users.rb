@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :bio
       t.integer :age
       t.string :img_url
-      t.integer :phone_number
+      t.string :phone_number
       t.timestamps
     end
   end
