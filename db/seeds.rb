@@ -9,7 +9,7 @@ Event.destroy_all
 User.destroy_all
 UserEvent.destroy_all
 
-Event.create(title:"DataScienceGO Virtual Part 1", category:"This Weekend", location:"Zoom", description:"DataScienceGO Virtual is a 2-day conference focused on career advancement for data science practitioners, and beginners and managers.", date_time:"2020-06-20 12:00".to_time, img_url:"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F99392914%2F305201963807%2F1%2Foriginal.20200424-000208?w=1080&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=f3ae4a6ad5d50413a7011bb5a1762d26")
+
 
 Event.create(title:"Uncorked: Virtual Wine Fest- Santa Barbara Reds", category:"Food and Drink", location:"Zoom (Online Event)", description:"JUncorked Wine Festivals is teaming up with three highly regarded Santa Barbara wineries to bring you the next installment in our virtual wine festivals... all Santa Barbara Reds! Come explore the everything the Central Coast has to offer with selections from Cambria Vineyards, Nielson Winery & Ex Post Facto by Brewer- Clifton.", date_time:"2020-06-27 12:00".to_time, img_url:"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F101744944%2F165370344593%2F1%2Foriginal.20200524-205029?w=1080&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C1%2C910%2C455&s=ec06423c6b38a4ebc04a4ee214f914ec")
 
